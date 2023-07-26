@@ -1,9 +1,8 @@
 metadata_version: 1
 name: Redshift Data Connector
-description: "Query Redshift and fetch data from the tickit table schema. Access provided
-  using database secrets. \n\nThe app panel provides users with the ability to choose
-  which table to fetch, and whether or not to share the result data asset with the
-  whole organization."
+description: This capsule will query a Redshift database and output a csv file containing
+  the requested data. By default it will query the tickit schema of the sample_data_dev
+  database which comes with a Redshift instance.
 tags:
 - redshift
 - database
