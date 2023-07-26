@@ -23,18 +23,24 @@ if host == "Default Host":
 #set up and establish connection
 client = boto3.client('redshift-serverless')
 
-creds = client.get_credentials(
-    workgroupName='default'
-)
+#if database secrets exist use them, otherwise use an assumed role
+if "DATABASE_USERNAME" in os.environ:
+    user=os.environ['DATABASE_USERNAME']
+    password=os.environ['DATABASE_PASSWORD']
+else:
+    creds = client.get_credentials(
+        workgroupName='default'
+    )
+    user=creds['dbUser']
+    password=creds['dbPassword']
 
 conn = redshift_connector.connect(
     host=host,
     port=port,
     database=database,
-    user=creds['dbUser'],
-    password=creds['dbPassword']
+    user=user,
+    password=password
 )
-
 cursor = conn.cursor()
 
 #fetch table as dataframe
