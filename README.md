@@ -2,7 +2,7 @@
 
 <hr>
 
-# Redshift Data connector
+# Redshift Data Connector
 
 This is a generic Redshift connector which will query a Redshift database and save the result as a csv file. 
 
@@ -19,7 +19,7 @@ None
 
 ## Output Data
 
-**output**: Stderr output
+**output**: Console output from the run.
 
 **output_file_name.csv**: csv file containing the output for the query where output_file_name will be based on the "Output File Name" parameter. 
 
