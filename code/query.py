@@ -51,7 +51,7 @@ df = cursor.fetch_dataframe()
 
 #preview table and save it as a csv
 print(df.head())
-# df.to_csv(f"../results/{file_name}.csv")  
+
 match output_format: 
     case 'tsv': 
         print("I'm a tsv")
